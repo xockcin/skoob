@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 import { BarCodeScanner } from "expo-barcode-scanner";
 import nodeIsbn from "node-isbn";
+import ViewBooks from "./ViewBooks";
 
-export default function Add(props) {
+export default function AddBook(props) {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
 
@@ -46,7 +47,7 @@ export default function Add(props) {
           />
           <Button
             title={"Tap to View Books"}
-            onPress={() => alert(props.books)}
+            onPress={() => props.viewBooks()}
           />
         </>
       )}
