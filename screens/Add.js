@@ -20,7 +20,8 @@ export default function Add(props) {
       if (err) {
         alert("Book not found", err);
       } else {
-        alert(book.title);
+        alert(book.title)
+        props.addBook(data)
       }
     });
   };
@@ -45,7 +46,7 @@ export default function Add(props) {
           />
           <Button
             title={"Tap to View Books"}
-            onPress={() => setScanned(false)}
+            onPress={() => alert(props.books)}
           />
         </>
       )}

@@ -5,7 +5,11 @@ import nodeIsbn from "node-isbn";
 import Add from "./screens/Add"
 
 export default function App() {
-  return <Add/>
+  const [books, setBooks] = useState([])
+
+  const addBook = bookToAdd => setBooks(books.concat(bookToAdd))
+
+  return <Add addBook={addBook} books={books} />
 }
 
 const styles = StyleSheet.create({
