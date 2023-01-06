@@ -11,8 +11,11 @@ export default function App() {
 
   const bookList = (
     <View style={styles.container}>
-      <Text>{JSON.stringify(books)}</Text>
-      <Button title={"Tap to add book"} onPress={() => setAdding(true)}  />
+      <FlatList
+        data={books}
+        renderItem={({ item }) => <Text style={styles.item}>{item}</Text>}
+      />
+      <Button title={"Tap to add book"} onPress={() => setAdding(true)} />
     </View>
   );
 
