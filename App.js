@@ -13,9 +13,9 @@ export default function App() {
     <View style={styles.container}>
       <FlatList
         data={books}
-        renderItem={({ item }) => <Text style={styles.item}>{item}</Text>}
+        renderItem={({ item }) => <Text style={styles.item}>{item.title}, by {item.authors}</Text>}
       />
-      <Button title={"Tap to add book"} onPress={() => setAdding(true)} />
+      <Button style={{color: "grey"}} title={"Tap to add book"} onPress={() => setAdding(true)} />
     </View>
   );
 
@@ -40,5 +40,18 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffffff",
     alignItems: "center",
     justifyContent: "center",
+    paddingTop: 50,
   },
+  item: {
+    margin: 5,
+    padding: 10,
+    fontSize: 18,
+    height: 44,
+    borderWidth: 3,
+    borderColor: "black",
+  },
+  button: {
+    margin: 30,
+    color: "gray"
+  }
 });

@@ -21,8 +21,7 @@ export default function AddBook(props) {
       if (err) {
         alert("Book not found", err);
       } else {
-        alert(book.title)
-        props.addBook(data)
+        props.addBook(book)
       }
     });
   };
